@@ -2,7 +2,7 @@ const loadText = document.querySelector('.loading-text') //
 const bg = document.querySelector('.background-image')
 
 let load = 0
-let int = setInterval(blurring, 25)
+let int = setInterval(blurring, 20)
 function blurring() {
   load++
   if(load > 99){
@@ -11,7 +11,7 @@ function blurring() {
   loadText.innerText = `${load}%`
   loadText.style.opacity = scale(load, 0, 100, 1, 0)
   //console.log(load)
-  bg.style.filter = `blur(${scale(load,0, 100, 30, 0)}px)`
+  bg.style.filter = `blur(${scale(load,0, 100, 20, 0)}px)`
 }
 const scale = (num, in_min, in_max, out_min, out_max) => {
   return ((num - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min
